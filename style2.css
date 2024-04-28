@@ -1,0 +1,9 @@
+body{
+    font-family: "Montserrat",sans-serif;
+    /*background-color: chartreuse;*/
+    /* background-image: url(../img/portada.webp);  */
+}
+
+#mainNavbar{
+    background-color: rgba(0, 0, 0, 0.3);
+}
