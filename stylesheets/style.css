@@ -39,7 +39,7 @@ body{
     /*  display: flex; /* Usa Flexbox para organizar los elementos internos 
     flex-direction: column; Alinea los elementos internos verticalmente 
     justify-content: center; /* Centra los elementos internos verticalmente dentro del contenedor */
-    background-color: rgba(0, 0, 0, 0.6); /* Color de fondo semitransparente del rectángulo */
+    background-color: rgba(0, 0, 0, 0.3); /* Color de fondo semitransparente del rectángulo */
     position: fixed; /* Hace que el rectángulo 'flote' sobre el resto de la página */
     left: 2%; /* Ajusta esta propiedad para mover el rectángulo horizontalmente */
     top: 10%; /* Ajusta esta propiedad para mover el rectángulo verticalmente */
@@ -47,6 +47,7 @@ body{
     height: 50rem; /* Altura del rectángulo */
     padding: 5rem; /* Espacio interno para asegurarse de que el contenido no esté pegado a los bordes */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: agrega sombra para un efecto de 'flotación' */
+    border-radius: 1rem;
 }
 
 .bienvenido h1, .bienvenido h2, .boton {
@@ -72,15 +73,14 @@ body{
     background-color: var(--primario);
     color: var(--blanco);
     padding: 1rem 3rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-top: 3rem;
     text-decoration: none; /* Quitar la línea de enlace*/
-    text-transform: uppercase;
     border: 2px solid transparent;
-    border-radius: 1rem;
+    border-radius: 3rem;
     transition: background-color 0.3s, border-color 0.3s; /*Transicion de boton suave*/
+    padding: 16px 45px;
     display: inline-block; 
-    width: auto; 
 }
 
 .boton:hover{
