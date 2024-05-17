@@ -1,0 +1,93 @@
+:root { /* Los elementos que inican con : es porque no hay etiquetas o elementos que se llamen de esa forma en el html*/
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #5A1236;
+    --secundario: #5B262E;
+    --gris: #999;
+
+    --fuente-principal: 3.8rem;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1{
+    font-size: 3.8rem;
+}  
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+
+body{
+    font-size: 16px; /* 1rem = 10px*/
+    font-family: "Montserrat",sans-serif;
+    /*margin: 2rem 2rem; */
+    background-image: url(../img/portada.webp); 
+    background-repeat: no-repeat; /*No repetir*/
+    background-size: cover; /*Ajustarse al tamaño*/
+}
+
+.bienvenido {
+    /*  display: flex; /* Usa Flexbox para organizar los elementos internos 
+    flex-direction: column; Alinea los elementos internos verticalmente 
+    justify-content: center; /* Centra los elementos internos verticalmente dentro del contenedor */
+    background-color: rgba(0, 0, 0, 0.3); /* Color de fondo semitransparente del rectángulo */
+    position: fixed; /* Hace que el rectángulo 'flote' sobre el resto de la página */
+    left: 2%; /* Ajusta esta propiedad para mover el rectángulo horizontalmente */
+    top: 10%; /* Ajusta esta propiedad para mover el rectángulo verticalmente */
+    width: 100rem; /* Ancho del rectángulo */
+    height: 50rem; /* Altura del rectángulo */
+    padding: 5rem; /* Espacio interno para asegurarse de que el contenido no esté pegado a los bordes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: agrega sombra para un efecto de 'flotación' */
+    border-radius: 1rem;
+}
+
+.bienvenido h1, .bienvenido h2, .boton {
+    width: auto; /* Asegura que los elementos no se estiren */
+    display: block; /* Trata los elementos como bloques, permitiendo margin auto */
+}
+
+.bienvenido h1{
+    color: var(--blanco);
+    font-size: 8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.bienvenido h2{
+    color: var(--blanco);
+    font-size: 4rem;
+    margin-top: 0;
+    margin-bottom: 15rem;
+}
+
+.boton{
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    text-decoration: none; /* Quitar la línea de enlace*/
+    border: 2px solid transparent;
+    border-radius: 3rem;
+    transition: background-color 0.3s, border-color 0.3s; /*Transicion de boton suave*/
+    padding: 16px 45px;
+    display: inline-block; 
+}
+
+.boton:hover{
+    background-color: transparent;
+    border: 2px solid var(--primario);
+}
+
+@media(min-width: 480px) {
+    
+}
