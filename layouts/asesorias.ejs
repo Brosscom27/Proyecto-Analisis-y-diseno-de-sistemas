@@ -1,0 +1,30 @@
+<%- include('partials/head') %>
+    <link rel="stylesheet" href="stylesheets/styleMain.css">
+    <link rel="stylesheet" href="stylesheets/asesorias.css">
+</head>
+<body>
+  
+    <%- include('partials/navbarEstudiantes') %>
+    <div class="space"></div>
+    <div class="container">
+        <% if (asesorias && asesorias.length > 0) { %>
+            <% asesorias.forEach(asesoria => { %>
+                <div class="asesoria">
+                    <h3><%= asesoria.nombre %></h3>
+                    <p>Horario: <b><%= asesoria.horario %></b></p>
+                    <p>Descripción: <%= asesoria.descripcion %></p>
+                </div>
+                
+            <% }); %>
+        <% } else { %>
+            <p>No hay asesorías disponibles en este momento.</p>
+        <% } %>
+        
+    </div>
+      
+
+    
+    <script integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
