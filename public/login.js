@@ -3,7 +3,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     const user = document.querySelector("#login-form #user").value;
     const password = document.querySelector("#login-form #password").value;
     try {
-        const res = await fetch("http://localhost:5000/api/login", {
+        const res = await fetch("http://localhost:3000/api/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
