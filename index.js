@@ -4,6 +4,9 @@ import {fileURLToPath} from "url";
 import dotenv from "dotenv";
 import login from "./autentificacion.js"
 import data from "./data.json" assert { type: "json" };
+import DB from "./config/db.js";
+
+import Asesoria from "./models/asesoria.js";
 
 dotenv.config();
 
@@ -15,6 +18,9 @@ const asesorias = data;
 app.use(express.json());
 
 app.use(express.static(__dirname + "/public"));
+
+//Conectar a mongo
+DB.connectDB(process.env.DB_URI);
 
 //Usar EJS
 app.set("view engine", "ejs")
@@ -52,7 +58,7 @@ app.get("/mensajes", (req,res) => {
     res.render("mensajes")
 })
 
-app.get("/asesorias", (req, res) => {
-    const asesorias = data.asesorias;
-    res.render("asesorias", { asesorias });
+app.get("/asesorias", async (req, res) => {
+    const asesorias = await Asesoria.find({})
+    res.render('asesorias.ejs', {asesorias})
 });
