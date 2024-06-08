@@ -1,4 +1,5 @@
 import Asesoria from "./models/asesoria.js";
+import Solicitud from "./models/solicitud.js";
 import DB from "./config/db.js";
 import dotenv from 'dotenv';
 

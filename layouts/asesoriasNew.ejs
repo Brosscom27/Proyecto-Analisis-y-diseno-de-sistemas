@@ -1,0 +1,37 @@
+<%- include('partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/styleMain.css">
+    <link rel="stylesheet" href="/stylesheets/styleNewAsesoria.css">
+</head>
+<body>
+    <%- include('partials/navbarAsesores') %>
+    <div class="space2"></div>
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="height: 100vh;">
+            <div class="col-md-6">
+                <h1 class="text-center mb-4">Crea una nueva tutoria</h1>
+                <form action="/asesorias" method="POST">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre o materia</label>
+                        <input type="text" name="nombre" class="form-control" placeholder="Escribe el tema o la materia" id="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="horario" class="form-label">Horario de asesoria</label>
+                        <input type="text" name="horario" class="form-control" placeholder="Formato de 12hrs. Indica am o pm" id="horario" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tutor" class="form-label">Nombre del asesor</label>
+                        <input type="text" name="tutor" class="form-control" placeholder="Nombre completo del asesor" id="tutor" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contacto" class="form-label">Contacto</label>
+                        <input type="text" name="contacto" class="form-control" placeholder="Formas de contacto" id="contacto">
+                    </div>
+                    <button type="submit" class="boton">Agregar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--Bootstrap Script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

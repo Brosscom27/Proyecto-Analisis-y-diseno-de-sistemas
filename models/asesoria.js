@@ -12,6 +12,10 @@ const asesoriaSchema = new mongoose.Schema({
     tutor: {
         type: String,
         required: true
+    },
+    contacto: {
+        type: String,
+        required: true
     }
 })
 

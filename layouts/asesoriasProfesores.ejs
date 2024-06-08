@@ -4,7 +4,7 @@
 </head>
 <body>
   
-    <%- include('partials/navbarEstudiantes') %>
+    <%- include('partials/navbarAsesores') %>
     <div class="space"></div>
     <div class="container">
         <% if (asesorias && asesorias.length > 0) { %>
@@ -14,7 +14,6 @@
                     <p>Horario: <%= asesoria.horario %></p>
                     <p>Descripción: <%= asesoria.tutor %></p>
                     <p>Contacto: <%= asesoria.contacto %></p>
-                    <a href="/asesorias/<%= asesoria._id%>" class="boton">Solicitar</a>
                 </div>
                 
             <% }); %>
