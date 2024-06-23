@@ -1,4 +1,3 @@
-
 <%- include('partials/head') %>
 <link rel="stylesheet" href="/stylesheets/styleMain.css">
 <link rel="stylesheet" href="/stylesheets/asesoriasShow.css">
@@ -18,14 +17,16 @@
                 <p>Nombre del asesor: <%= asesoria.tutor %></p>
                 <p>Contacto: <%= asesoria.contacto %></p>
             </div>
-            <div class="col-1">
-            </div>
+            <div class="col-1"></div>
             <div class="col-5 text-start">
                 <h2>Envía un mensaje</h2>
                 <div class="mb-3">
-                    <label for="mensaje" class="form-label">Escribe un mensaje breve al asesor</label>
-                    <textarea class="form-control" type="text" id="mensaje" rows="2"></textarea>
-                    <a href="#" class="boton">Enviar</a>
+                    <form action="/enviarMensaje" method="POST">
+                        <label for="mensaje" class="form-label">Escribe un mensaje breve al asesor</label>
+                        <textarea class="form-control" name="mensaje" id="mensaje" rows="2"></textarea>
+                        <input type="hidden" name="asesoriaId" value="<%= asesoria._id %>">
+                        <button type="submit" class="boton">Solicitar</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -34,4 +35,3 @@
 <script integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
-

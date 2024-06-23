@@ -11,7 +11,10 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
             body: JSON.stringify({ user, password })
         });
 
-        if (!res.ok) throw new Error('Respuesta de red no fue ok.');
+        if (!res.ok){
+            document.getElementById("incorrectKeys").style.display = 'block'
+            throw new Error('Respuesta de red no fue ok.');
+        }
 
         const resJson = await res.json();
         if (resJson.redirect) {

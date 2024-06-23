@@ -1,4 +1,4 @@
-:root { /* Los elementos que inican con : es porque no hay etiquetas o elementos que se llamen de esa forma en el html*/
+:root {
     --blanco: #ffffff;
     --oscuro: #212121;
     --primario: #5A1236;
@@ -22,13 +22,9 @@ h1{
 }
 
 .col-5{
-    background-color: rgb(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 2% 3%;
     border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
     border: 3px solid var(--primario);
 }
 
@@ -38,7 +34,6 @@ h2{
 
 .boton{
     margin-top: 7%;
-    margin-bottom: none;
     background-color: var(--primario);
     color: var(--blanco);
     padding: 1rem 3rem;
@@ -47,20 +42,11 @@ h2{
     border: 2px solid transparent;
     border-radius: 3rem;
     transition: background-color 0.3s, border-color 0.3s; /*Transicion de boton suave*/
-    padding: 10px 45px;
     display: inline-block; 
 }
 
 .boton:hover{
     background-color: transparent;
     border: 2px solid var(--primario);
-    color: #212121;
+    color: var(--oscuro);
 }
-
-
-
-
-
-
-
-

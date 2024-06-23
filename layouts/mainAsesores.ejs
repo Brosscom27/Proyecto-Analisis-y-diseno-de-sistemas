@@ -14,23 +14,23 @@
         <div class="row w-100">
           <div class="col-1 test"></div>
           <div class="col-6 d-flex flex-column align-items-center justify-content-center first-col test">
-            <h2>Perfil del Estudiante</h2>
+            <h2>Asesor</h2>
             <img src="https://media.gq.com.mx/photos/630919ae3620d901074a721e/master/w_1600,c_limit/como-vestir-en-la-universidad-sin-verte-pasado-de-moda-ropa.jpg">
-            <p> James Smith</p>
+            <p><%= user.user %></p>
           </div>
           <div class="col-3 d-flex flex-column align-items-start justify-content-center flex-col second-col test">
             <div class="space"></div>
             <div class="d-flex about">
-              <p><strong>Boleta:&nbsp;</strong></p><span></span><p>2023710113</p>
+              <p><strong>Correo:&nbsp;</strong></p><span></span><p><%= user.correo %></p>
             </div>
             <div class="d-flex about">
-              <p><strong>Mail:&nbsp;</strong></p><span></span><p>sato@gmail.com</p>
+              <p><strong>Telefono:&nbsp;</strong></p><span></span><p><%= user.telefono %></p>
             </div>
             <div class="d-flex about">
-              <p><strong>CURP:&nbsp;</strong></p><span></span><p>TOOS040302HDFRRM2</p>
+              <p><strong>CURP:&nbsp;</strong></p><span></span><p><%= user.curp %></p>
             </div>
             <div class="d-flex about">
-              <p><strong>Facultad:&nbsp;</strong></p><span></span><p>UPIIT</p>
+              <p><strong>Areas:&nbsp;</strong></p><span></span><p><%= user.area %></p>
             </div>
           </div>    
           <div class="col-2 test"></div>                

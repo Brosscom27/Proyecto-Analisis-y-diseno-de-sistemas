@@ -9,6 +9,7 @@
         <div class="row justify-content-center align-items-center" style="height: 100vh;">
             <div class="col-md-6">
                 <h1 class="text-center mb-4">Solicita nuevas materias</h1>
+                <div id="message" class="alert" style="display:none;"></div>
                 <form action="/solicitud" method="POST" id="solicitudForm">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre o materia</label>
@@ -39,17 +40,33 @@
                 });
                 const result = await response.json();
                 if (response.ok) {
-                    alert(result.message);
-                    window.location.href = '/asesorias'; // Redirigir a la página de asesorías
+                    showMessage(result.message, 'success');
+                    setTimeout(() => {
+                        window.location.href = '/asesorias'; // Redirigir a la página de asesorías
+                    }, 3000); // Cambia el tiempo según sea necesario
                 } else {
-                    alert(result.message);
+                    showMessage(result.message, 'error');
                 }
             } catch (error) {
-                alert("Hubo un error al enviar la solicitud");
+                showMessage("Hubo un error al enviar la solicitud", 'error');
             }
         });
+
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = message;
+            messageDiv.className = 'alert'; // Resetea las clases
+            if (type === 'success') {
+                messageDiv.classList.add('alert-success');
+            } else if (type === 'error') {
+                messageDiv.classList.add('alert-error');
+            }
+            messageDiv.style.display = 'block';
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 2000); // Tiempo que el mensaje permanece visible, ajusta según sea necesario
+        }
     </script>
 
     <script integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-</html>

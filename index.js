@@ -1,9 +1,14 @@
 import express from "express";
 import path from "path";
+import cookieParser from 'cookie-parser';
 import {fileURLToPath} from "url";
 import dotenv from "dotenv";
-import login from "./autentificacion.js"
+import {usuarios, login} from "./autentificacion.js";
 import DB from "./config/db.js";
+import authenticateToken from "./middleware/middleware.js";
+import Mensaje from "./mensaje.js";
+import AsesoriaRouter from "./mostrarmensajes.js";
+import Estado from "./aceptar.js"
 
 import Asesoria from "./models/asesoria.js";
 import Solicitud from "./models/solicitud.js";
@@ -17,7 +22,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(cookieParser());
 app.use(express.static(__dirname + "/public"));
 
 //Conectar a mongo
@@ -35,10 +40,6 @@ app.get("/", (req, res) =>{
     res.sendFile(__dirname + "/layouts/bienvenido.html");
 });
 
-app.get("/inicio", (req, res) => {
-    res.sendFile(__dirname + "/layouts/main.html")
-});
-
 app.post("/api/login", login);
 
 app.get("/registrer", (req, res) =>{
@@ -47,13 +48,20 @@ app.get("/registrer", (req, res) =>{
 
 
 //Vistas de prueba
-app.get("/testEstudiantes", (req,res) => {
-    res.render("mainEstudiantes")
+app.get("/testEstudiantes", authenticateToken, async (req,res) => {
+    const user = await usuarios.find(usuarios => usuarios.user == req.user.user && usuarios.role == "alumno")
+    console.log(user)
+    res.render("mainEstudiantes", {user})
 })
 
-app.get("/testAsesores", (req,res) => {
-    res.render("mainAsesores")
+app.get("/testAsesores", authenticateToken, async (req,res) => {
+    const user = await usuarios.find(usuarios => usuarios.user == req.user.user && usuarios.role == "asesor")
+    res.render("mainAsesores", {user})
 })
+
+app.use("/", AsesoriaRouter);
+
+app.use("/", Estado)
 
 app.get("/mensajes", (req,res) => {
     res.render("mensajes")
@@ -101,6 +109,7 @@ app.post('/solicitud', async (req, res) => {
     }
 });
 
+app.use("/", Mensaje);
 
 
 
