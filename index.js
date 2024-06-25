@@ -114,12 +114,19 @@ app.use("/", Mensaje);
 
 
 //Mostrar una asesoría en específico, solo visible para alumnos
-app.get('/asesorias/:id', async(req,res) => {
-    const {id} = req.params;
-    const asesoria = await Asesoria.findById(id);
-    res.render('asesoriasShow', {asesoria})
-})
+app.get('/asesorias/:id', authenticateToken, async (req, res) => {
+    const user = usuarios.find(u => u.user === req.user.user);
+    if (!user) return res.sendStatus(404);
 
+    const asesoriaId = req.params.id; // Asegúrate de usar el parámetro correcto de la URL
+    const asesoria = await Asesoria.findById(asesoriaId);
+
+    if (!asesoria) {
+        return res.sendStatus(404); // Manejo de error si no se encuentra la asesoría
+    }
+
+    res.render('asesoriasShow', { user, asesoria });
+});
 
 
 

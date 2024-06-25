@@ -11,6 +11,10 @@ const mensajeSchema = new Schema({
         type: String,
         required: true
     },
+    solicitante: {
+        type: String,
+        required: true
+    },
     estado: {type: String,
         default: 'pendiente'
     }

@@ -1,19 +1,21 @@
-import express from "express";
+import express from 'express';
+import Mensaje from './models/mensaje.js';  // Asegúrate de tener el modelo Mensaje
+
 const router = express.Router();
-import Mensaje from "./models/mensaje.js";  // Asegúrate de tener el modelo Mensaje
 
 router.post('/enviarMensaje', async (req, res) => {
     try {
+        const { asesoriaId, mensaje, solicitante } = req.body;
         const nuevoMensaje = new Mensaje({
-            asesoriaId: req.body.asesoriaId,
-            texto: req.body.mensaje
+            asesoriaId,
+            texto: mensaje,
+            solicitante
         });
         await nuevoMensaje.save();
         res.redirect('/testEstudiantes');
-        
     } catch (err) {
         console.error(err);
-        res.redirect('/confirmacion?enviado=false');
+        res.redirect('/testEstudiantes'); // Puedes cambiar esta redirección según tu manejo de errores
     }
 });
 
