@@ -10,7 +10,8 @@ export const usuarios = [{
     role: "alumno",
     boleta: "2022311400",
     curp: "COCM271003",
-    campus: "UPIIT"
+    campus: "UPIIT",
+    imgURL: "/img/mario.jpeg"
 },
 {
     user: "Samuel",
@@ -19,7 +20,8 @@ export const usuarios = [{
     role: "asesor",
     telefono: "2461481975",
     area: "Matematicas",
-    curp: "SAM24"
+    curp: "SAM24",
+    imgURL: "/img/samuel.jpeg"
 },
 {
     user: "Selene",
@@ -28,7 +30,8 @@ export const usuarios = [{
     role: "alumno",
     boleta: "2545155644",
     curp: "SELENE23",
-    campus: "ESIA"
+    campus: "ESIA",
+    imgURL: "/img/selene.jpeg"
 },
 {
     user: "Ana",
@@ -37,7 +40,8 @@ export const usuarios = [{
     role: "alumno",
     boleta: "2023123456",
     curp: "ANAC901010",
-    campus: "UPIICSA"
+    campus: "UPIICSA",
+    imgURL: "/img/ana.jpeg"
 },
 {
     user: "Carlos",
@@ -46,16 +50,18 @@ export const usuarios = [{
     role: "asesor",
     telefono: "5551234567",
     area: "Fisica",
-    curp: "CARF750102HDFRRR00"
+    curp: "CARF750102HDFRRR00",
+    imgURL: "/img/carlos.jpeg"
 },
 {
-    user: "Laura",
-    correo: "laura@gmail.com",
+    user: "Lauro",
+    correo: "lauro@gmail.com",
     password: "laura123",
     role: "alumno",
     boleta: "2019456789",
     curp: "LAUR870304HDFRRL01",
-    campus: "UPIIG"
+    campus: "UPIIG",
+    imgURL: "/img/lauro.jpeg"
 }]
 
 export async function login(req,res){

@@ -1,45 +1,43 @@
 <%- include('partials/head') %>
-    <link rel="stylesheet" href="/stylesheets/styleMain.css">
+<link rel="stylesheet" href="/stylesheets/styleMain.css">
 </head>
 <body>
   
-    <%- include('partials/navbarEstudiantes') %>
+<%- include('partials/navbarEstudiantes') %>
 
-    <!-- Hero section -->
-    <section class="hero-section">
-      <div class="space">
-
+<!-- Hero section -->
+<section class="hero-section">
+  <div class="space"></div>
+  <div class="container d-flex align-items-center justify-content-center text-white">
+    <div class="row w-100">
+      <div class="col-1 test"></div>
+      <div class="col-6 d-flex flex-column align-items-center justify-content-center first-col test">
+        <h2>Alumno</h2>
+        <img src="<%= user.imgURL%>" alt="Imagen de <%= user.user %>">
+        <p><%= user.user %></p>
       </div>
-      <div class="container d-flex align-items-center justify-content-center text-white">
-        <div class="row w-100">
-          <div class="col-1 test"></div>
-          <div class="col-6 d-flex flex-column align-items-center justify-content-center first-col test">
-            <h2>Alumno</h2>
-            <img src="https://media.gq.com.mx/photos/630919ae3620d901074a721e/master/w_1600,c_limit/como-vestir-en-la-universidad-sin-verte-pasado-de-moda-ropa.jpg">
-            <p><%= user.user %></p>
-          </div>
-          <div class="col-3 d-flex flex-column align-items-start justify-content-center flex-col second-col test">
-            <div class="space"></div>
-            <div class="d-flex about">
-              <p><strong>Boleta:&nbsp;</strong></p><span></span><p><%= user.boleta %></p>
-            </div>
-            <div class="d-flex about">
-              <p><strong>Mail:&nbsp;</strong></p><span></span><p><%= user.correo %></p>
-            </div>
-            <div class="d-flex about">
-              <p><strong>CURP:&nbsp;</strong></p><span></span><p><%= user.curp %></p>
-            </div>
-            <div class="d-flex about">
-              <p><strong>Campus:&nbsp;</strong></p><span></span><p><%= user.campus %></p>
-            </div>
-          </div>    
-          <div class="col-2 test"></div>                
+      <div class="col-3 d-flex flex-column align-items-start justify-content-center flex-col second-col test">
+        <div class="space"></div>
+        <div class="d-flex about">
+          <p><strong>Boleta:&nbsp;</strong></p><span></span><p><%= user.boleta %></p>
         </div>
-      </div>
-    </section>
-    <!-- End Hero section -->
+        <div class="d-flex about">
+          <p><strong>Mail:&nbsp;</strong></p><span></span><p><%= user.correo %></p>
+        </div>
+        <div class="d-flex about">
+          <p><strong>CURP:&nbsp;</strong></p><span></span><p><%= user.curp %></p>
+        </div>
+        <div class="d-flex about">
+          <p><strong>Campus:&nbsp;</strong></p><span></span><p><%= user.campus %></p>
+        </div>
+      </div>    
+      <div class="col-2 test"></div>                
+    </div>
+  </div>
+</section>
+<!-- End Hero section -->
 
-    <!--Bootstrap Script-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!--Bootstrap Script-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

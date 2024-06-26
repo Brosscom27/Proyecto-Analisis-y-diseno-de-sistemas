@@ -1,0 +1,33 @@
+<%- include('partials/head') %>
+<link rel="stylesheet" href="/stylesheets/styleMain.css">
+<link rel="stylesheet" href="/stylesheets/misMensajes.css">
+</head>
+<body>
+  
+    <%- include('partials/navbarEstudiantes') %>
+
+    <!-- Mensajes section -->
+    <section class="mensajes-section">
+      <div class="container">
+        <h2>Mensajes</h2>
+        <ul class="list-group">
+          <% mensajes.forEach(mensaje => { %>
+            <li class="list-group-item 
+              <% if (mensaje.estado === 'aceptada') { %> list-group-item-success <% } %>
+              <% if (mensaje.estado === 'rechazada') { %> list-group-item-danger <% } %>
+              <% if (mensaje.estado === 'pendiente') { %> list-group-item-warning <% } %>">
+              <p><strong>Asesoría:</strong> <%= mensaje.asesoriaId.nombre %></p>
+              <p><strong>Horario:</strong> <%= mensaje.asesoriaId.horario %></p>
+              <p><strong>Contenido:</strong> <%= mensaje.texto %></p>
+              <p><strong>Estado:</strong> <%= mensaje.estado %></p>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+    </section>
+    <!-- End Mensajes section -->
+    
+    <!--Bootstrap Script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+    </html>

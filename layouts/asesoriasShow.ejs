@@ -24,7 +24,7 @@
                         <label for="mensaje" class="form-label">Escribe un mensaje breve al asesor</label>
                         <textarea class="form-control" name="mensaje" id="mensaje" rows="2"></textarea>
                         <input type="hidden" name="asesoriaId" value="<%= asesoria._id %>">
-                        <input type="hidden" name="solicitante" value="<%= user._id %>"> <!-- Añadir el solicitante -->
+                        <input type="hidden" name="solicitante" value="<%= user.user %>"> <!-- Añadir el solicitante -->
                         <button type="submit" class="boton">Solicitar</button>
                     </form>
                 </div>
