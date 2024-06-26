@@ -20,6 +20,8 @@ h1 {
     color: var(--primario);
     font-size: 2.5rem;
     font-weight: bold;
+    text-align: center;
+    margin: 1rem 0 2rem 0;
 }
 
 .space2 {
@@ -95,11 +97,12 @@ h1 {
 
 /* Estilos adicionales para la sección de mensajes */
 .mensajes-section {
-    margin-top: 100px; /* Ajusta esta cantidad según la altura de tu navbar */
-    padding: 2rem;
+    margin-top: 150px; /* Ajusta esta cantidad según la altura de tu navbar */
     background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 80px;
+    margin-left: 80px;
 }
 
 .mensajes-section h2 {
@@ -114,6 +117,8 @@ h1 {
     border: none;
     color: var(--oscuro);
     margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     padding: 1rem;
     border-radius: 5px;
     transition: background-color 0.3s ease;

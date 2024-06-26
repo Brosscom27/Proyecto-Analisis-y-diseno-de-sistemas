@@ -19,7 +19,7 @@ export const usuarios = [{
     password: "tonoto2",
     role: "asesor",
     telefono: "2461481975",
-    area: "Matematicas",
+    area: "Matemáticas",
     curp: "SAM24",
     imgURL: "/img/samuel.jpeg"
 },
